@@ -6,6 +6,7 @@ footer {
   background-color: silver;
   padding-bottom: 50px;
   padding-top: 50px;
+  margin-left: 20px;
 }
 nav {
   background-color: silver;
@@ -13,7 +14,7 @@ nav {
   width: 100%;
 }
 body {
-  background-color: silver;
+  background-color: silver
 }
 h1 {
   font-family: Futura;
@@ -33,7 +34,6 @@ nav li
    display: inline;
    padding: 20px;
    margin: 20px;
-   float: right;
 }
 img {
   width: 100%;
@@ -41,4 +41,18 @@ img {
 p {
   text-align: center;
   padding: 70px;
+  font-style: italic;
+}
+
+///////// contact_form
+
+.submit_button {
+  text-align: center;
+}
+.form-group {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+.col-md-12 {
+  text-align: center;
 }
