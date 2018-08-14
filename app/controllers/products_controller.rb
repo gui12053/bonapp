@@ -61,6 +61,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  # TEST index #
+  def index
+    @products = Product.all
+    @test_variable = 42
+  end
+   
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
