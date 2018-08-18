@@ -1,19 +1,13 @@
-<br/><br/><h1>Products</h1>
-<div class="container-fluid">
-  <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-sm">
-        <a href="#"><h1><td><%= product.name %></td></h1></a>
-        <p><td><%= image_tag(product.image_url, class: "img-fluid") %></td></p>
-        <p><td><%= product.description %></td></p>
-        <p><td><%= link_to 'Show', product %></td></p>
-        <p><td><%= link_to 'Edit', edit_product_path(product) %></td></p>
-        <p><td><%= product.price %></td></p>
+<div class="index-content">
+  <p id="notice"><%= notice %></p>
+  <h1>Products</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <%= render @products %>
+      </div>
+    </div>
 
-      </div><!-- /col -->
-    <% end %>
-  </div>
+    <br>
+      <%= link_to 'New Product', new_product_path, :class => "new-product" %>
+
 </div>
-<br>
-
-<%= link_to 'New Product', new_product_path %>
