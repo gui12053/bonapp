@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 <h1>Products</h1>
 
@@ -9,7 +10,7 @@
         <%= image_tag(product.image_url, class: "img-responsive") if product.image_url %>
         <dl><%= product.description %></dl>
           <dl>
-            <strong>Available color:</strong><%= product.color %></dl>
+            <strong>Available colour:</strong><%= product.colour %></dl>
             <dl>
             <strong>price:</strong>$<%= product.price %></dl>
           <%= link_to 'Show', product %>
