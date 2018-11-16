@@ -1,9 +1,8 @@
 <div id="carouselExampleIndicators" class="carousel slide landing-carousel" data-ride="carousel">
   <!-- indicators -->
   <ol class="carousel-indicators">
-    <% @products.each_with_index do |product| %>
-    <li class="link<%= " active" if product == @products.first %>">
-    <li data-target="#carouselExampleIndicators"></li>
+    <% @products.each_with_index do |product, index| %>
+    <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>"  class="<%= "active" if product == @products.first %>"></li>
     <% end %>
   </ol>
   <!-- wrapper for slides -->
