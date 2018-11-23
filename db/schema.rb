@@ -20,10 +20,6 @@ ActiveRecord::Schema.define(version: 2018_08_31_140906) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "price_columns", force: :cascade do |t|
-    t.string "price"
-  end
-
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
