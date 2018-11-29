@@ -1,6 +1,6 @@
 <div class="container order_information">
 	<h2>Order Information</h2>
-		<div class="order-info">
+		<div class="order-info"><br/><br/>
 			<strong>Order ID: </strong><%= @order.id %> <br>
 			<strong>Product Name: </strong><%= @order.product.name %> <br>
 			<strong>Product Price: </strong><%= number_to_currency(@order.product.price/100.to_f) %> <br>
