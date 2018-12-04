@@ -9,7 +9,7 @@ body {
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 22px;
   line-height: 18px;
 }
 
@@ -23,12 +23,13 @@ a {
   color: #000;
 
   &:visited {
-    color: #666;
+    color: #D8D8D8;
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: white;
+    font-style: italic;
+    text-decoration: none
   }
 }
 
