@@ -72,3 +72,13 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:name, :description, :image_url, :colour, :price)
     end
 end
+
+# Product filter
+
+def index
+  if params [:q]
+    search_term = params [:q]
+  else
+    @products = Product.where("name LIKE ?", "%#{search_term}%")
+  end
+end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :show, :create, :destroy]
   get 'simple_pages/about'
   get 'simple_pages/contact'
+  get 'simple_pages/landing_page'
   # redirect your users to a different page
   post 'simple_pages/thank_you'
   # rerouting the landing page
