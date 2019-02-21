@@ -22,7 +22,10 @@ h1 {
   text-align: center;
   padding-bottom: 20px;
   padding-top: 20px;
-  margin-top: 30px;
+  margin-top: 60px;
+  margin-left: center;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
 }
 ///////// price
 strong {
@@ -49,12 +52,14 @@ p {
   text-align: center;
   padding: 70px;
   font-style: italic;
+  line-height: 40px;
 }
 
 ///////// contact_form
 
 .submit_button {
   text-align: center;
+  margin-left: 333px;
 }
 .form-group {
   margin-left: 250px;
