@@ -50,13 +50,14 @@
       <% end %>
     </nav>
 
-    <nav>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </nav>
+    <div class="container">
+          <% if notice %>
+            <p class="alert alert-success" role="alert"><%= notice %></p>
+          <% end %>
+
+          <% if alert %>
+            <p class="alert alert-warning" role="alert"><%= alert %></p>
+    <% end %>
 
     <%= yield %>
 
