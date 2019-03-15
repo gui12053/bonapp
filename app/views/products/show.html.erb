@@ -10,18 +10,20 @@
          </div>
          <p>
            Price:
-           <%= @product.price %>
+           <%= @product.price %> £
          </p>
          <p>
            <strong>Description:</strong>
            <%= @product.description %>
         </p>
+        <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
         <p>
-           <%= @product.highest_rating_comment %>
+          <%= render 'new_comment' %>
         </p>
-        <%= link_to 'Edit', edit_product_path(@product) %> |
-        <%= link_to 'Back', products_path %>
+
+        <%= render 'comments' %>
       </div>
+
     </div>
   </div>
 </section>
