@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :products do
     resources :comments
   end
-  
-  devise_for :users
+
+  devise_for :users, controllers: { registrations: "user_registrations" }
   resources :users
   resources :products
   resources :orders, only: [:index, :show, :create, :destroy]
