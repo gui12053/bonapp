@@ -18,7 +18,7 @@
 .content-show-product {
   width: 90% !important;
   margin: 0 auto;
-  margin-top: 6em !important;
+  margin-top: 200px !important;
   margin-bottom: 1em;
   border: medium solid #343a40;
   border-radius: 15px;
@@ -38,10 +38,12 @@
   padding-top: 1em;
 }
 
+.product-partial,
 .product-show-image {
   border-radius: 15px;
-  padding: .5em;
   padding-bottom: 25px;
+  background-color: white;
+  
 }
 
 .btn-outline-secondary {
@@ -58,4 +60,34 @@
 
 .pagination {
   margin: 20px;
+}
+
+.product-gallery-name {
+  padding-top: 5px;
+}
+
+.product-gallery-decription{
+  padding-top: 5px;
+}
+
+.product-gallery-color {
+  padding-top: 5px;
+}
+.product-gallery-price {
+  padding-top: 5px;
+}
+
+.product-info {
+  padding-top: 5px;
+}
+
+
+.img-fluid {
+  border-radius: 20px;
+  max-width: 100%;
+}
+
+[class*="col-"] {
+    background-clip: padding-box;
+    border: 10px solid transparent;
 }

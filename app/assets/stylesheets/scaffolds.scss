@@ -2,17 +2,20 @@ body {
   background-color: #fff;
   color: #333;
   margin: 33px;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: 'ZCOOL KuaiLe', cursive;
   font-size: 13px;
   line-height: 18px;
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 22px;
+ol, ul, td {
+  font-family: 'ZCOOL KuaiLe', cursive;
+  font-size: 25px;
   line-height: 18px;
 }
-
+p {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 20px;
+}
 pre {
   background-color: #eee;
   padding: 10px;
@@ -23,11 +26,15 @@ a {
   color: #000;
 
   &:visited {
-    color: #D8D8D8;
+    color: black;
   }
 
   &:hover {
-    color: white;
+    color: #ff005b;
+    -webkit-transition: color 1s;
+    -moz-transition: color 1s;
+    -o-transition: color 1s;
+    transition: color 1s;
     font-style: italic;
     text-decoration: none
   }
