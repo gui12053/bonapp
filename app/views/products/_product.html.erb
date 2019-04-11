@@ -1,13 +1,14 @@
-<% cache product do %>
-  <div class="col-sm-4 col-md-4 product-partial">
+<div class="col-sm-4 col-md-4 product-partial">
+  <% cache product do %>
     <h1><%= link_to product.name, product %></h1>
+    <% logger.debug "Product name is #{product.name}"%>
     <%= link_to image_tag(product.image_url, class: "img-fluid"), product_path(product) %>
-    <br><br>
     <p class="product-info"><%= product.description %></p>
-    <p class="product-info"><%= product.colour %></p>
     <p class="product-gallery-price"><%= product.price %>€</p>
-    <p class="edit"><%= link_to 'Show', product %> |
-    <%= link_to 'Edit', edit_product_path(product) %> |
-    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  </div>
-<% end %>
+    <% end %>
+    <% if signed_in? && current_user.admin? %>
+      <p class="edit"><%= link_to 'Show', product %> |
+      <%= link_to 'Edit', edit_product_path(product) %> |
+      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+</div>

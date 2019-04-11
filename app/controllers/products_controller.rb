@@ -7,8 +7,10 @@ class ProductsController < ApplicationController
     if params[:q]
       search_term = params[:q]
     @products = Product.search(search_term)
+    logger.debug "My search found #{@products.count} products"
     else
       @products = Product.all
+      logger.debug "My search found #{@products.count} products"
     end
   end
 
@@ -20,6 +22,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
+    byebug
     @product = Product.new
   end
 
