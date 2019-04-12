@@ -6,8 +6,8 @@ class ProductsController < ApplicationController
   def index
     if params[:q]
       search_term = params[:q]
-      @products = Product.search(search_term)
-      logger.debug "My search found #{@products.count} products"
+    @products = Product.search(search_term)
+    logger.debug "My search found #{@products.count} products"
     else
       @products = Product.all
       logger.debug "My search found #{@products.count} products"
