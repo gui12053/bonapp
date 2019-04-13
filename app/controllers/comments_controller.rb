@@ -20,7 +20,6 @@ class CommentsController < ApplicationController
    end
 
    def destroy
-    byebug
     @comment = Comment.find(params[:id])
     product = @comment.product
     @comment.destroy
