@@ -15,42 +15,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
 </head>
-  <body>
-    <nav class="navbar navbar-expand-md fixed-top">
-      <%= link_to image_tag('AudioBookTransparent.png'), root_path, class: "d-none d-md-block" %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<body>
+  <nav class="navbar navbar-expand-md fixed-top">
+    <%= link_to image_tag('AudioBookTransparent.png'), root_path, class: "d-none d-md-block" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
-          </li>
-          <% else %>
-          <li class="nav-item">
-            <%= link_to('Login', new_user_session_path, class: "nav-link") %>
-          </li>
-          <% end %>
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><%= link_to "Home", root_path %></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><%= link_to "About", simple_pages_about_path %></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><%= link_to "Contact", simple_pages_contact_path %></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><%= link_to "Products", products_path %></a>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to('Login', new_user_session_path, class: "nav-link") %>
+        </li>
+        <% end %>
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><%= link_to "Home", root_path %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><%= link_to "About", simple_pages_about_path %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><%= link_to "Contact", simple_pages_contact_path %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><%= link_to "Products", products_path %></a>
 
         </ul>
       </div>
       <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-        <%= form.label :q, 'Search for:' %>
-        <%= form.text_field :q, id: 'q', value: params[:q] %>
-        <%= form.submit 'Search' %>
+      <%= form.label :q, 'Search for:' %>
+      <%= form.text_field :q, id: 'q', value: params[:q] %>
+      <%= form.submit 'Search' %>
       <% end %>
     </nav>
 
@@ -62,10 +62,16 @@
       </ul>
     </nav>
 
-    <%= yield %>
+    <% if notice %>
+    <p class="alert alert-success success-note" role="alert"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-danger alert note" role="alert"><%= alert %></p>
+    <% end %>
 
+    <%= yield %>
     <footer>
       &copy; 2018 InAudible
     </footer>
   </body>
-</html>
+  </html>
