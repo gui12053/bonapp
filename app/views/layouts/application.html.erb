@@ -69,6 +69,12 @@
     <p class="alert alert-danger alert note" role="alert"><%= alert %></p>
     <% end %>
 
+    <% flash.each do |key, message| %>
+      <p class="<%= key %>">
+        <%= message %>
+      </p>
+    <% end %>
+
     <%= yield %>
     <footer>
       &copy; 2018 InAudible
