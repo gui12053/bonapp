@@ -93,7 +93,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'silverwater.herokuapp.com' }
 
-  config.cache_store = :mem_dalli_store,
+  config.cache_store = :mem_cache_store,
                     (ENV["MEMCACHIER_SERVERS"] || "").split(","),
                     {:username => ENV["MEMCACHIER_USERNAME"],
                      :password => ENV["MEMCACHIER_PASSWORD"],
@@ -102,4 +102,5 @@ Rails.application.configure do
                      :socket_failure_delay => 0.2,
                      :down_retry_delay => 60
                     }
+  config.cache_store = :dalli_store
 end
