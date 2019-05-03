@@ -5,20 +5,22 @@
         <%= image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image:@product.image_url) if @product.image_url%>
       </div>
       <div class="col show-product-col">
-         <div class="product-edit-title"
-           <h5><%= @product.name %><h5>
-         </div>
-         <div class="description">
-           <strong>Description:</strong>
-           <%= @product.description %>
+        <% cache @product do %>
+        <div class="product-edit-title"
+        <h5><%= @product.name %><h5>
         </div>
+        <div class="description">
+          <strong>Description:</strong>
+          <%= @product.description %>
+        </div>
+        <% end %>
         <div class="price">
           Price:
           <%= number_to_currency(@product.price, :unit => "€") %>
         </div>
         <%= form_tag "/payments/create" do %>
-          <%= render partial: "shared/stripe_checkout_button" %>
-          <%= hidden_field_tag(:product_id, @product.id) %>
+        <%= render partial: "shared/stripe_checkout_button" %>
+        <%= hidden_field_tag(:product_id, @product.id) %>
         <% end %>
         <p>Average Rating: </p><div class="rated" data-score="<%= @product.average_rating %>"></div>
         <% if @product.comments.length > 0 %>
