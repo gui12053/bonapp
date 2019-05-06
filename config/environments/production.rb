@@ -94,13 +94,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'silverwater.herokuapp.com' }
 
   config.cache_store = :mem_cache_store,
-                    (ENV["MEMCACHIER_SERVERS"] || "").split(","),
-                    {:username => ENV["MEMCACHIER_USERNAME"],
-                     :password => ENV["MEMCACHIER_PASSWORD"],
-                     :failover => true,
-                     :socket_timeout => 1.5,
-                     :socket_failure_delay => 0.2,
-                     :down_retry_delay => 60
-                    }
+  (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+  {:username => ENV["MEMCACHIER_USERNAME"],
+    :password => ENV["MEMCACHIER_PASSWORD"],
+    :failover => true,
+    :socket_timeout => 1.5,
+    :socket_failure_delay => 0.2,
+    :down_retry_delay => 60
+  }
   config.cache_store = :dalli_store
+  config.web_socket_server_url = "wss://silverwater.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://silverwater.herokuapp.com', 'http://silverwater.herokuapp.com']
 end

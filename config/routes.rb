@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :products do
     resources :comments
   end
-
   devise_for :users, controllers: { registrations: "user_registrations" }
   resources :users
   resources :products
@@ -17,4 +16,5 @@ Rails.application.routes.draw do
   root 'simple_pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post 'payments/create'
+  mount ActionCable.server => '/cable'
 end
