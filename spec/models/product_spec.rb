@@ -1,19 +1,29 @@
 require 'rails_helper'
 
 describe Product do
+  context "when the product has comments" do
 
-  let(:product) { Product.create!(name: "race bike") }
+    let(:product) { Product.create!(name: "cleanser") }
 
-  let(:user) { User.create!(email: "johannschmidt@gmail.com", password: "kaspar")}
-  before do
-    product.comments.create!(rating: 1, user: user, body: "Weird bike")
-    product.comments.create!(rating: 3, user: user, body: "Mediocre bike")
-    product.comments.create!(rating: 5, user: user, body: "Best bike ever")
-  end
-  it "returns the average rating of all commnents" do
-    expect(product.average_rating).to eq 3
-  end
-  it "is not valid without a name" do
-    expect(Product.new(description: "Best bike ever")).not_to be_valid
+    let(:user) { User.create!(email: "test@gmail.com", password: "test123") }
+
+    before do
+      product.comments.create!(rating: 1, user: user, body: "Stop it!")
+      product.comments.create!(rating: 3, user: user, body: "Almost mediocre")
+      product.comments.create!(rating: 5, user: user, body: "We wan't more of it")
+    end
+
+    it "returns the average rating of all comments" do
+      expect(product.average_rating).to eq 3
+    end
+
+    it "is not valid without a name" do
+      expect(Product.new(description: "Some text.")).not_to be_valid
+    end
+
+    it "is not valid without a price" do
+      expect(Product.new(price: nil)).not_to be_valid
+    end
+
   end
 end

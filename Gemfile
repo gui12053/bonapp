@@ -58,6 +58,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "factory_bot_rails", "~> 4.0"
+  gem 'simplecov', require: false, group: :test
 end
 
 group :production do
