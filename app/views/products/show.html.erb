@@ -18,6 +18,7 @@
           Price:
           <%= number_to_currency(@product.price, :unit => "€") %>
         </div>
+        <div class="row show-product-row" data-product-id="<%= @product.id %>"></div>
         <%= form_tag "/payments/create" do %>
         <%= render partial: "shared/stripe_checkout_button" %>
         <%= hidden_field_tag(:product_id, @product.id) %>
