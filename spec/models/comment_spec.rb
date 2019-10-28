@@ -7,10 +7,6 @@ describe Comment do
 
     let(:product) { Product.create!(name: "Old book") }
 
-    before do
-      product.comments.create!(rating: 3, user: user, body: "comment")
-    end
-
     it "is not valid without a user" do
       expect(Comment.new(rating: 3, body: "comment")).not_to be_valid
     end

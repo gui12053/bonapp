@@ -17,12 +17,12 @@ describe Product do
       expect(product.average_rating).to eq 3
     end
 
-    it "is not valid without a name" do
-      expect(Product.new(description: "Some text.")).not_to be_valid
+    it "returns the lowest average rating comment" do
+      expect(product.lowest_rating_comment.rating).to eq 1
     end
 
-    it "is not valid without a price" do
-      expect(Product.new(price: nil)).not_to be_valid
+    it "is not valid without a name" do
+      expect(Product.new(description: "Some text.")).not_to be_valid
     end
 
   end

@@ -38,6 +38,7 @@ describe ProductsController, type: :controller do
     it "redirects to edit page" do
       get :edit, params: {id: product.id}
       expect(response).to be_ok
+      expect(response).to render_template('index')
     end
   end
 
